@@ -1,10 +1,10 @@
 import pandas as pd
 
 #get the pricelist and converet it into a data frame
-aquapath = 'F:\\Radwania\\1-Technical\\Aqua\\Price_List_AQUA.xlsx' 
+Vendopath = 'F:\\Radwania\\1-Technical\\Vendorname\\Price_List_Vendor.xlsx' 
 df_aqua = pd.read_excel(aquapath)  
-df_aqua['priceegp']= df_aqua['Prices']* 31 * 0.95* 1.14 
-df_aqua['salesprice']= df_aqua['priceegp']/0.65
+df_aqua['priceegp']= df_aqua['Prices']* USD TO EGP*  Discount * Tax 
+df_aqua['salesprice']= df_aqua['priceegp']/Value
 replacement_dict = {'INJECTED SAND FILTERS ': '', 'VALVE DIA': '', 'AT 50M3/HR/M2 VELOCITY': '', 'WITH TOP 6 WAY VALVE 1.5"': 'Tvalve 1.5"', 'SIDE 6 WAY VALVE 2"': 'Svalve 2"', 'SIDE 6 WAY VALVE 2"': 'Svalve 2"'}
 df_aqua['DESCRIPTION'].replace(replacement_dict, regex=True, inplace=True) 
 
